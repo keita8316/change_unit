@@ -2,19 +2,39 @@
 <head>
     
     <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
     <title>Change Unit</title>
 </head>
 <body>
+    <header>
     <h1>UnitChanger</h1>
+    </header>
     <div>
         <p>enter value</p>
+        <input type="text" id="val">
     </div>
+    <% const change =(unit) => {
+        let val = document.getElementsByName("val")[0].value;
+        result = unit * int(val);
+        return result;
+      }; %>
     <div>
+        <% const inch = 0.393701; 
+        const pound = 0.00220462;
+        const feet = 3.28084;%>
+        
         <p>select unit</p>
-        <span>change</span>
+
+        <input type="button" onclick="let solvent = inch;" value="inch">
+        <input type="button" onclick="let solvent = pound;" value="pound">
+        <input type="button" onclick="let solvent = feed;" value="feet">
+        
+        <input type="button" onclick="change(solvent)" value="Change">
     </div>
     <div>
+        <% let result = 0;%>
         <p>result</p>
+        <p><%= result %></p>
     </div>
 </body>
 </html>
